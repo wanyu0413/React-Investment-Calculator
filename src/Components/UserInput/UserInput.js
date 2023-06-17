@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 const userInput = () => {
+  const [userInput, setUserInput] = useState({
+    "current-savings": 10000,
+    "yearly-contribution": 1200,
+    "expected-return": 7,
+    duration: 10,
+  });
+
   const submitHandler = (event) => {
     event.preventDefault();
     console.log("submit");
@@ -10,6 +19,12 @@ const userInput = () => {
 
   const inputChangeHandler = (input, value) => {
     console.log(input, value);
+    setUserInput((prevInput) => {
+      return {
+        ...prevInput,
+        [input]: value,
+      };
+    });
   };
 
   return (
