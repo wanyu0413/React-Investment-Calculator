@@ -1,20 +1,23 @@
 import { useState } from "react";
+const initialUserInput = {
+  "current-savings": 10000,
+  "yearly-contribution": 1200,
+  "expected-return": 7,
+  duration: 10,
+};
 
-const userInput = () => {
-  const [userInput, setUserInput] = useState({
-    "current-savings": 10000,
-    "yearly-contribution": 1200,
-    "expected-return": 7,
-    duration: 10,
-  });
+const UserInput = () => {
+  const [userInput, setUserInput] = useState(initialUserInput);
 
   const submitHandler = (event) => {
     event.preventDefault();
     console.log("submit");
+    setUserInput(initialUserInput);
   };
 
   const resetHandler = () => {
     console.log("reset");
+    setUserInput(initialUserInput);
   };
 
   const inputChangeHandler = (input, value) => {
@@ -87,4 +90,4 @@ const userInput = () => {
   );
 };
 
-export default userInput;
+export default UserInput;
