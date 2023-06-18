@@ -34,7 +34,7 @@ function App() {
     <div>
       <Header />
 
-      <UserInput />
+      <UserInput onCalculate={calculateHandler} />
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
