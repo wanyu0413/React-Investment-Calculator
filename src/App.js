@@ -40,7 +40,11 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-      <ResultsTable />
+      {userInput ? (
+        <ResultsTable data={yearlyData} />
+      ) : (
+        <p>No investment calculated yet!</p>
+      )}
     </div>
   );
 }
