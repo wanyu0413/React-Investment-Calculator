@@ -41,7 +41,10 @@ function App() {
       {/* Show fallback text if no data is available */}
 
       {userInput ? (
-        <ResultsTable data={yearlyData} />
+        <ResultsTable
+          data={yearlyData}
+          initialInvestment={userInput["current-savings"]}
+        />
       ) : (
         <p>No investment calculated yet!</p>
       )}
